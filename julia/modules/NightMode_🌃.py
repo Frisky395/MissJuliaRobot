@@ -211,7 +211,7 @@ async def _(event):
             )
             await tbot(functions.messages.EditChatDefaultBannedRightsRequest(
                 peer=id, banned_rights=openchat
-            )
+            ))
             newtime = otime + timedelta(days=1)
             to_check = get_info(id=event.chat_id)
             nightmod.update_one(
@@ -251,7 +251,7 @@ async def _(event):
             )
             await tbot(functions.messages.EditChatDefaultBannedRightsRequest(
                 peer=id, banned_rights=closechat
-            )
+            ))
             newtime = ctime + timedelta(days=1)
             to_check = get_info(id=event.chat_id)
             nightmod.update_one(
