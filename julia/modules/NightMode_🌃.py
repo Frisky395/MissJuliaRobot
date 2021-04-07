@@ -296,7 +296,7 @@ file_help = file_help.replace(".py", "")
 file_helpo = file_help.replace("_", " ")
 
 __help__ = """
-__NightMode is a module to prevent users from spamming, sending links(crypto, promotions etc.), photos, videos or whatever when chat administrators are sleeping so the bot will disable write/send access to the chat in such a time until the chat administrators wake up and screw them all.__
+__NightMode is a module to prevent users from spamming, sending links(crypto, promotions etc.), gifs, photos, videos or whatever when chat administrators are sleeping so the bot will disable write/send access to the chat in such a time until the chat administrators wake up and screw them all.__
 
  - /nightmode <on/off>: turns on nightmod in the chat
  - /setnightmode <zone|closing time|opening time>: sets the time details and activates the scheduler
