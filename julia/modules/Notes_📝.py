@@ -55,7 +55,7 @@ async def on_note(event):
 async def _(event):
     if event.is_group:
         if not await can_change_info(message=event):
-            return    
+            return
     name = event.pattern_match.group(1)
     msg = await event.get_reply_message()
     if msg:

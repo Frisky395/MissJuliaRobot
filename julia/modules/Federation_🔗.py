@@ -1991,7 +1991,7 @@ async def _(event):
         return
     chat = event.chat_id
     if chat in ANTI_FBAN:
-        return    
+        return
     user = event.sender_id
     fed_id = sql.get_fed_id(chat)
     fban, fbanreason, fbantime = sql.get_fban_user(fed_id, user)
@@ -2010,9 +2010,9 @@ async def join_ban(event):
         return
     chat = event.chat_id
     if chat in ANTI_FBAN:
-        return    
+        return
     if not event.user_joined:
-       return
+        return
     user = event.user_id
     fed_id = sql.get_fed_id(chat)
     fban, fbanreason, fbantime = sql.get_fban_user(fed_id, user)
