@@ -282,7 +282,6 @@ async def _(event):
         zone = c["zone"]       
         ctime = c["ctime"]
         otime = c["otime"]
-        if not event.chat_id
         present = dateparser.parse(
             f"now", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "YMD"}
         )        
