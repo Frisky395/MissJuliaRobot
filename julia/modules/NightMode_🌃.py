@@ -230,9 +230,8 @@ async def _(event):
         otime = c["otime"]
         present = dateparser.parse(
             f"now", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "YMD"}
-        )
-        ootime = dateparser.parse(f"{otime}", settings={"TIMEZONE": f"{zone}"})
-        if present > ootime:
+        )        
+        if present > otime:
             await tbot.send_message(
                 id,
                 f"**Nightbot:** It's time opening the chat now ...",
@@ -273,8 +272,7 @@ async def _(event):
         present = dateparser.parse(
             f"now", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "YMD"}
         )
-        cctime = dateparser.parse(f"{ctime}", settings={"TIMEZONE": f"{zone}"})
-        if present > cctime:
+        if present > ctime:
             await tbot.send_message(
                 id,
                 f"**Nightbot:** It's time closing the chat now ...",
