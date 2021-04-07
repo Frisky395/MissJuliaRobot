@@ -112,6 +112,12 @@ async def profanity(event):
 async def _(event):
     if event.fwd_from:
         return   
+    if event.is_private:
+        return
+    if MONGO_DB_URI is None:
+        return
+    if not await can_change_info(message=event):
+        return
     quew = event.pattern_match.group(1)
     if "|" in quew:
         zone, ctime, otime = quew.split("|")
