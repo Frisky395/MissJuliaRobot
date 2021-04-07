@@ -157,10 +157,10 @@ async def _(event):
         await event.reply("Please enter valid date and time and zone.")
         return    
     cctime = dateparser.parse(
-        "{ctime}", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "DMY"}
+        f"{ctime}", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "DMY"}
     ) + timedelta(days=1)
     ootime = dateparser.parse(
-        "{otime}", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "DMY"}
+        f"{otime}", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "DMY"}
     ) + timedelta(days=1)
     if cctime == ootime:
         await event.reply("Chat opening and closing time cannot be same.")
