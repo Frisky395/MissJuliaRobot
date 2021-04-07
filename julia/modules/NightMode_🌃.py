@@ -222,10 +222,7 @@ async def _(event):
 async def _(event):
  try: 
     if event.is_private:
-        return
-    if not to_check:
-       return
-    to_check = get_info(id=event.chat_id)
+        return  
     chats = nightmod.find({})
     for c in chats:
         # print(c)
@@ -248,6 +245,9 @@ async def _(event):
                 )
             )
             newtime = ctime + timedelta(days=1)            
+            to_check = get_info(id=id)   
+            if not to_check:
+               return 
             print (newtime)
             print (to_check)
             nightmod.update_one(
@@ -274,9 +274,6 @@ async def _(event):
  try:
     if event.is_private:
         return
-    to_check = get_info(id=event.chat_id)
-    if not to_check:
-       return
     chats = nightmod.find({})
     for c in chats:
         # print(c)
@@ -285,6 +282,7 @@ async def _(event):
         zone = c["zone"]       
         ctime = c["ctime"]
         otime = c["otime"]
+        if not event.chat_id
         present = dateparser.parse(
             f"now", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "YMD"}
         )        
@@ -298,7 +296,10 @@ async def _(event):
                     peer=id, banned_rights=openchat
                 )
             )
-            newtime = otime + timedelta(days=1)          
+            newtime = otime + timedelta(days=1)     
+            to_check = get_info(id=id)   
+            if not to_check:
+               return 
             print (newtime)
             print (to_check)
             nightmod.update_one(
