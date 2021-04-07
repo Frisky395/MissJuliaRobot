@@ -127,8 +127,6 @@ async def _(event):
 
 @tbot.on(events.NewMessage(pattern=None))
 async def tikclock(event):
-    if event.is_private:
-        return
     chats = alarms.find({})
     for c in chats:
         # print(c)
