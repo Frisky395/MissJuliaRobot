@@ -2,11 +2,10 @@
 
 > If you liked the project don't forget to give a star ⭐️
 
+![Jokes Card](https://readme-jokes.vercel.app/api)
 **Its a request to everyone who is using this free software and maintaining their own forks/imports from this repository to strictly comply with the LICENCE associated with this repository !**
 
 **If you are using an import your repository should contain a link to the [main repository](https://github.com/MissJuliaRobot/MissJuliaRobot) in the README.**
-
-![Jokes Card](https://readme-jokes.vercel.app/api)
 
 [![AGPLv3 license](https://img.shields.io/github/license/MissJuliaRobot/MissJuliaRobot?color=red)](https://www.gnu.org/licenses/agpl-3.0.en.html)
 [![CodeFactor](https://www.codefactor.io/repository/github/missjuliarobot/missjuliarobot/badge)](https://www.codefactor.io/repository/github/missjuliarobot/missjuliarobot)
