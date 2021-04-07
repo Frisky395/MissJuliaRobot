@@ -124,7 +124,7 @@ async def profanity(event):
         await event.reply("I only understand by on or off")
         return
 
-@tbot.on(events.NewMessage(pattern="^/setnightmode (.*)"))
+@register(pattern="^/setnightmode (.*)")
 async def _(event):
  try:
     if event.fwd_from:
@@ -168,9 +168,12 @@ async def _(event):
     if not ootime > cctime and not cctime < ootime:
         await event.reply("Chat opening time must be greater than closing time")
         return        
-    print (ttime)
-    print (cctime)
-    print (ootime)
+    if cctime > ootime:
+        await event.reply("Chat closing time cant be greater than opening time")
+        return  
+    #print (ttime)
+    #print (cctime)
+    #print (ootime)
     chats = nightmod.find({})
     for c in chats:
         if (
@@ -286,3 +289,18 @@ async def _(event):
             break
             return
         continue
+
+
+__help__ = """
+__NightMode is a module to prevent users from spamming, sending links(crypto, promotions etc.), photos, videos or whatever when chat administrators are sleeping so the bot will disable write/send access to the chat in such a time until the chat administrators wake up and screw them all.__
+
+ - /nightmode <on/off>: turns on nightmod in the chat
+ - /setnightmode <zone|closing time|opening time>: sets the time details and activates the scheduler
+
+**Syntax:** `/setnightmode America/New_York | 12:00:00 PM | 07:00:00 AM`
+
+**NOTE:** 
+Nightmode doesn't work on the day of setting but starts working from next day onwards.
+"""
+
+CMD_HELP.update({file_helpo: [file_helpo, __help__]})
