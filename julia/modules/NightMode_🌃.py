@@ -193,6 +193,7 @@ async def _(event):
                     {
                         "_id": to_check["_id"],
                         "id": to_check["id"],
+                        "valid": to_check["valid"],
                         "zone": to_check["zone"],
                         "ctime": to_check["ctime"],
                         "otime": to_check["otime"],
@@ -225,13 +226,14 @@ async def _(event):
     for c in chats:
         # print(c)
         id = c["id"]
-        zone = c["zone"]
+        valid = c["valid"]
+        zone = c["zone"]       
         ctime = c["ctime"]
         otime = c["otime"]
         present = dateparser.parse(
             f"now", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "YMD"}
         )        
-        if present > otime:
+        if present > otime and valid:
             await tbot.send_message(
                 id,
                 f"**Nightbot:** It's time opening the chat now ...",
@@ -247,6 +249,7 @@ async def _(event):
                 {
                     "_id": to_check["_id"],
                     "id": to_check["id"],
+                    "valid": to_check["valid"],
                     "zone": to_check["zone"],
                     "ctime": to_check["ctime"],
                     "otime": to_check["otime"],
@@ -266,13 +269,14 @@ async def _(event):
     for c in chats:
         # print(c)
         id = c["id"]
+        valid = c["valid"]
         zone = c["zone"]
         ctime = c["ctime"]
         otime = c["otime"]
         present = dateparser.parse(
             f"now", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "YMD"}
         )
-        if present > ctime:
+        if present > ctime and valid:
             await tbot.send_message(
                 id,
                 f"**Nightbot:** It's time closing the chat now ...",
@@ -288,6 +292,7 @@ async def _(event):
                 {
                     "_id": to_check["_id"],
                     "id": to_check["id"],
+                    "valid": to_check["valid"],     
                     "zone": to_check["zone"],
                     "ctime": to_check["ctime"],
                     "otime": to_check["otime"],
