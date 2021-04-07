@@ -118,6 +118,8 @@ __help__ = """
 **Admin+Non-Admin**
  - /notes: List all notes in the chat
  - #<word> : get the note registered to that word
+
+**Note**: You can also use private notes (same commands)
 """
 
 CMD_HELP.update({file_helpo: [file_helpo, __help__]})
