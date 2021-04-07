@@ -219,10 +219,7 @@ async def _(event):
 
 
 @tbot.on(events.NewMessage(pattern=None))
-async def _(event):
- try: 
-    if event.is_private:
-        return  
+async def _(event):  
     chats = nightmod.find({})
     for c in chats:
         # print(c)
@@ -245,11 +242,7 @@ async def _(event):
                 )
             )
             newtime = ctime + timedelta(days=1)            
-            to_check = get_info(id=id)   
-            if not to_check:
-               return 
-            print (newtime)
-            print (to_check)
+            to_check = get_info(id=id)
             nightmod.update_one(
                 {
                     "_id": to_check["_id"],
@@ -264,16 +257,10 @@ async def _(event):
             break
             return
         continue
- except Exception as e:
-   print (e)
-  
 
 
 @tbot.on(events.NewMessage(pattern=None))
 async def _(event):
- try:
-    if event.is_private:
-        return
     chats = nightmod.find({})
     for c in chats:
         # print(c)
@@ -296,11 +283,7 @@ async def _(event):
                 )
             )
             newtime = otime + timedelta(days=1)     
-            to_check = get_info(id=id)   
-            if not to_check:
-               return 
-            print (newtime)
-            print (to_check)
+            to_check = get_info(id=id) 
             nightmod.update_one(
                 {
                     "_id": to_check["_id"],
@@ -315,8 +298,6 @@ async def _(event):
             break
             return
         continue
- except Exception as e:
-   print (e)
 
 
 file_help = os.path.basename(__file__)
