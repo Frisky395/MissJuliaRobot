@@ -220,49 +220,7 @@ async def _(event):
 
 @tbot.on(events.NewMessage(pattern=None))
 async def _(event):
-    if event.is_private:
-        return
-    chats = nightmod.find({})
-    for c in chats:
-        # print(c)
-        id = c["id"]
-        valid = c["valid"]
-        zone = c["zone"]       
-        ctime = c["ctime"]
-        otime = c["otime"]
-        present = dateparser.parse(
-            f"now", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "YMD"}
-        )        
-        if present > otime and valid:
-            await tbot.send_message(
-                id,
-                f"**Nightbot:** It's time opening the chat now ...",
-            )
-            await tbot(
-                functions.messages.EditChatDefaultBannedRightsRequest(
-                    peer=id, banned_rights=openchat
-                )
-            )
-            newtime = otime + timedelta(days=1)
-            to_check = get_info(id=event.chat_id)
-            nightmod.update_one(
-                {
-                    "_id": to_check["_id"],
-                    "id": to_check["id"],
-                    "valid": to_check["valid"],
-                    "zone": to_check["zone"],
-                    "ctime": to_check["ctime"],
-                    "otime": to_check["otime"],
-                },
-                {"$set": {"otime": newtime}},
-            )
-            break
-            return
-        continue
-
-
-@tbot.on(events.NewMessage(pattern=None))
-async def _(event):
+ try: 
     if event.is_private:
         return
     chats = nightmod.find({})
@@ -302,6 +260,53 @@ async def _(event):
             break
             return
         continue
+ except Exception as e:
+  print (e)
+
+@tbot.on(events.NewMessage(pattern=None))
+async def _(event):
+ try:
+    if event.is_private:
+        return
+    chats = nightmod.find({})
+    for c in chats:
+        # print(c)
+        id = c["id"]
+        valid = c["valid"]
+        zone = c["zone"]       
+        ctime = c["ctime"]
+        otime = c["otime"]
+        present = dateparser.parse(
+            f"now", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "YMD"}
+        )        
+        if present > otime and valid:
+            await tbot.send_message(
+                id,
+                f"**Nightbot:** It's time opening the chat now ...",
+            )
+            await tbot(
+                functions.messages.EditChatDefaultBannedRightsRequest(
+                    peer=id, banned_rights=openchat
+                )
+            )
+            newtime = otime + timedelta(days=1)
+            to_check = get_info(id=event.chat_id)
+            nightmod.update_one(
+                {
+                    "_id": to_check["_id"],
+                    "id": to_check["id"],
+                    "valid": to_check["valid"],
+                    "zone": to_check["zone"],
+                    "ctime": to_check["ctime"],
+                    "otime": to_check["otime"],
+                },
+                {"$set": {"otime": newtime}},
+            )
+            break
+            return
+        continue
+ except Exception as e:
+  print (e)
 
 
 file_help = os.path.basename(__file__)
