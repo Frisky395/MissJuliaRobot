@@ -55,9 +55,7 @@ async def on_note(event):
 async def _(event):
     if event.is_group:
         if not await can_change_info(message=event):
-            return
-    else:
-        return
+            return    
     name = event.pattern_match.group(1)
     msg = await event.get_reply_message()
     if msg:
@@ -76,10 +74,6 @@ async def _(event):
 
 @register(pattern="^/notes$")
 async def on_note_list(event):
-    if event.is_group:
-        pass
-    else:
-        return
     all_notes = get_all_notes(event.chat_id)
     OUT_STR = "**Available notes:**\n"
     if len(all_notes) > 0:
@@ -107,8 +101,6 @@ async def on_note_delete(event):
     if event.is_group:
         if not await can_change_info(message=event):
             return
-    else:
-        return
     name = event.pattern_match.group(1)
     remove_note(event.chat_id, name)
     await event.reply("Note **{}** deleted successfully".format(name))
