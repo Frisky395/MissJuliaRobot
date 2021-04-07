@@ -3,6 +3,7 @@
 > If you liked the project don't forget to give a star ⭐️
 
 ![Jokes Card](https://readme-jokes.vercel.app/api)
+
 **Its a request to everyone who is using this free software and maintaining their own forks/imports from this repository to strictly comply with the LICENCE associated with this repository !**
 
 **If you are using an import your repository should contain a link to the [main repository](https://github.com/MissJuliaRobot/MissJuliaRobot) in the README.**
