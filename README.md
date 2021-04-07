@@ -6,13 +6,14 @@
 
 **If you are using an import your repository should contain a link to the [main repository](https://github.com/MissJuliaRobot/MissJuliaRobot) in the README.**
 
-[![AGPLv3 license](https://img.shields.io/badge/license-AGPL–3.0-red.svg)](https://www.gnu.org/licenses/agpl-3.0.en.html)
+[![AGPLv3 license](https://img.shields.io/github/license/MissJuliaRobot/MissJuliaRobot?color=red)](https://www.gnu.org/licenses/agpl-3.0.en.html)
 [![CodeFactor](https://www.codefactor.io/repository/github/missjuliarobot/missjuliarobot/badge)](https://www.codefactor.io/repository/github/missjuliarobot/missjuliarobot)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FMissJuliaRobot%2FMissJuliaRobot&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://github.com/MissJuliaRobot/MissJuliaRobot)
 [![Website Status](https://img.shields.io/website-up-down-green-red/http/missjuliarobot.unaux.com.svg?label=website)](http://missjuliarobot.unaux.com)
 [![Total Size](https://github-size-badge.herokuapp.com/MissJuliaRobot/MissJuliaRobot.svg)](https://github.com/MissJuliaRobot/MissJuliaRobot)
 [![Python 3.6.13](https://img.shields.io/badge/python-3.6.13-blue.svg)](https://www.python.org/downloads/release/python-3613/)
+[![Node 4.0.0](https://img.shields.io/badge/node-4.0.0-green)](https://nodejs.org/en/blog/release/v4.0.0/)
 [![Maintenance](https://img.shields.io/badge/maintained-yes-yellow.svg)](https://github.com/MissJuliaRobot/MissJuliaRobot)
 
 **Blazingly fast Telegram Group Management Bot based on [Telethon](https://github.com/LonamiWebs/Telethon) coupled with [sqlalchemy](https://github.com/sqlalchemy/sqlalchemy) and [mongodb](https://github.com/mongodb/mongo)**
