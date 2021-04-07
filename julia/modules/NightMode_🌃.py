@@ -223,6 +223,8 @@ async def _(event):
  try: 
     if event.is_private:
         return
+    if not to_check:
+       return
     to_check = get_info(id=event.chat_id)
     chats = nightmod.find({})
     for c in chats:
@@ -272,6 +274,8 @@ async def _(event):
     if event.is_private:
         return
     to_check = get_info(id=event.chat_id)
+    if not to_check:
+       return
     chats = nightmod.find({})
     for c in chats:
         # print(c)
