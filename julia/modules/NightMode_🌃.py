@@ -124,8 +124,9 @@ async def profanity(event):
         await event.reply("I only understand by on or off")
         return
 
-@register(pattern="^/setnightmode (.*)")
+@tbot.on(events.NewMessage(pattern="^/setnightmode (.*)"))
 async def _(event):
+ try:
     if event.fwd_from:
         return   
     if event.is_private:
@@ -203,6 +204,8 @@ async def _(event):
         }
     )
     await event.reply("Nightmode set successfully !")
+ except Exception as e:
+    print (e)
 
 
 @tbot.on(events.NewMessage(pattern=None))
