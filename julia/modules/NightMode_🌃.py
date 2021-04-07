@@ -217,6 +217,7 @@ async def _(event):
     except Exception as e:
         print(e)
 
+global to_check
 
 @tbot.on(events.NewMessage(pattern=None))
 async def _(event):
