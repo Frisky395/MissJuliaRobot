@@ -13,7 +13,7 @@
 [![Website Status](https://img.shields.io/website-up-down-green-red/http/missjuliarobot.unaux.com.svg?label=website)](http://missjuliarobot.unaux.com)
 [![Total Size](https://github-size-badge.herokuapp.com/MissJuliaRobot/MissJuliaRobot.svg)](https://github.com/MissJuliaRobot/MissJuliaRobot)
 [![Python 3.6.13](https://img.shields.io/badge/python-3.6.13-blue.svg)](https://www.python.org/downloads/release/python-3613/)
-[![Node 4.0.0](https://img.shields.io/badge/node-4.0.0-green)](https://nodejs.org/en/blog/release/v4.0.0/)
+[![Node 4.0.0](https://img.shields.io/badge/node-4.0.0-pink)](https://nodejs.org/en/blog/release/v4.0.0/)
 [![Maintenance](https://img.shields.io/badge/maintained-yes-yellow.svg)](https://github.com/MissJuliaRobot/MissJuliaRobot)
 
 **Blazingly fast Telegram Group Management Bot based on [Telethon](https://github.com/LonamiWebs/Telethon) coupled with [sqlalchemy](https://github.com/sqlalchemy/sqlalchemy) and [mongodb](https://github.com/mongodb/mongo)**
