@@ -223,6 +223,7 @@ async def _(event):
  try: 
     if event.is_private:
         return
+    to_check = get_info(id=event.chat_id)
     chats = nightmod.find({})
     for c in chats:
         # print(c)
@@ -244,8 +245,7 @@ async def _(event):
                     peer=id, banned_rights=closechat
                 )
             )
-            newtime = ctime + timedelta(days=1)
-            to_check = get_info(id=event.chat_id)
+            newtime = ctime + timedelta(days=1)            
             print (newtime)
             print (to_check)
             nightmod.update_one(
@@ -271,6 +271,7 @@ async def _(event):
  try:
     if event.is_private:
         return
+    to_check = get_info(id=event.chat_id)
     chats = nightmod.find({})
     for c in chats:
         # print(c)
@@ -292,8 +293,7 @@ async def _(event):
                     peer=id, banned_rights=openchat
                 )
             )
-            newtime = otime + timedelta(days=1)
-            to_check = get_info(id=event.chat_id)
+            newtime = otime + timedelta(days=1)          
             print (newtime)
             print (to_check)
             nightmod.update_one(
