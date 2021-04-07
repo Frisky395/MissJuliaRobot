@@ -217,7 +217,6 @@ async def _(event):
     except Exception as e:
         print(e)
 
-global to_check
 
 @tbot.on(events.NewMessage(pattern=None))
 async def _(event):
@@ -265,8 +264,8 @@ async def _(event):
             break
             return
         continue
- except Exception as e:
-  print (e)
+ except Exception:
+  return
 
 
 @tbot.on(events.NewMessage(pattern=None))
@@ -315,8 +314,8 @@ async def _(event):
             break
             return
         continue
- except Exception as e:
-  print (e)
+ except Exception:
+  return
 
 
 file_help = os.path.basename(__file__)
