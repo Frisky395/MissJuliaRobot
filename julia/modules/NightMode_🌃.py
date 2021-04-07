@@ -111,7 +111,7 @@ async def profanity(event):
                 {
                     "id": event.chat_id,
                     "valid": False,
-                    "zone": "America/New_York",
+                    "zone": None,
                     "ctime": None,
                     "otime": None,
                 }
