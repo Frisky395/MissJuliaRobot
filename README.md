@@ -6,6 +6,8 @@
 
 **If you are using an import your repository should contain a link to the [main repository](https://github.com/MissJuliaRobot/MissJuliaRobot) in the README.**
 
+![Jokes Card](https://readme-jokes.vercel.app/api)
+
 [![AGPLv3 license](https://img.shields.io/github/license/MissJuliaRobot/MissJuliaRobot?color=red)](https://www.gnu.org/licenses/agpl-3.0.en.html)
 [![CodeFactor](https://www.codefactor.io/repository/github/missjuliarobot/missjuliarobot/badge)](https://www.codefactor.io/repository/github/missjuliarobot/missjuliarobot)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
