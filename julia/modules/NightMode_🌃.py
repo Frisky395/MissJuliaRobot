@@ -246,6 +246,8 @@ async def _(event):
             )
             newtime = ctime + timedelta(days=1)
             to_check = get_info(id=event.chat_id)
+            print (newtime)
+            print (to_check)
             nightmod.update_one(
                 {
                     "_id": to_check["_id"],
@@ -262,6 +264,7 @@ async def _(event):
         continue
  except Exception as e:
   print (e)
+
 
 @tbot.on(events.NewMessage(pattern=None))
 async def _(event):
@@ -291,6 +294,8 @@ async def _(event):
             )
             newtime = otime + timedelta(days=1)
             to_check = get_info(id=event.chat_id)
+            print (newtime)
+            print (to_check)
             nightmod.update_one(
                 {
                     "_id": to_check["_id"],
