@@ -291,6 +291,10 @@ async def _(event):
         continue
 
 
+file_help = os.path.basename(__file__)
+file_help = file_help.replace(".py", "")
+file_helpo = file_help.replace("_", " ")
+
 __help__ = """
 __NightMode is a module to prevent users from spamming, sending links(crypto, promotions etc.), photos, videos or whatever when chat administrators are sleeping so the bot will disable write/send access to the chat in such a time until the chat administrators wake up and screw them all.__
 
