@@ -6,7 +6,7 @@ from telethon import *
 from pymongo import MongoClient
 from julia import MONGO_DB_URI, CMD_HELP
 import dateparser
-form datetime import timedelta
+from datetime import timedelta
 import os, asyncio
 
 client = MongoClient()
@@ -140,10 +140,10 @@ async def _(event):
         await event.reply("Please enter valid date and time and zone.")
         return    
     cctime = dateparser.parse(
-        "{ctime}", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "DMY"} + timedelta (days=1)
+        "{ctime}", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "DMY"} + timedelta(days=1)
     )
     ootime = dateparser.parse(
-        "{otime}", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "DMY"} + timedelta (days=1)
+        "{otime}", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "DMY"} + timedelta(days=1)
     )
     if cctime == ootime:
         await event.reply("Chat opening and closing time cannot be same.")
@@ -187,3 +187,83 @@ async def _(event):
         }
     )
     await event.reply("Nightmode set successfully !")
+
+
+@tbot.on(events.NewMessage(pattern=None))
+async def _(event):
+    if event.is_private:
+        return
+    chats = nightmod.find({})
+    for c in chats:
+        # print(c)
+        id = c["id"]
+        zone = c["zone"]
+        ctime = c["ctime"]
+        otime = c["otime"]        
+        present = dateparser.parse(
+            f"now", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "YMD"}
+        )       
+        ootime = dateparser.parse(f"{otime}", settings={"TIMEZONE": f"{zone}"})
+        if present > ootime:
+            await tbot.send_message(
+                id,
+                f"**Nightbot:** It's time opening the chat now ...",
+            )
+            await tbot(functions.messages.EditChatDefaultBannedRightsRequest(
+                peer=id, banned_rights=openchat
+            )
+            newtime = otime + timedelta(days=1)
+            to_check = get_info(id=event.chat_id)
+            nightmod.update_one(
+                {
+                    "_id": to_check["_id"],
+                    "id": to_check["id"],
+                    "zone": to_check["zone"],
+                    "ctime": to_check["ctime"],
+                    "otime": to_check["otime"],
+                },
+                {"$set": {"otime": newtime}},
+            )
+            break
+            return
+        continue
+
+
+@tbot.on(events.NewMessage(pattern=None))
+async def _(event):    
+    if event.is_private:
+       return
+    chats = nightmod.find({})
+    for c in chats:
+        # print(c)
+        id = c["id"]
+        zone = c["zone"]
+        ctime = c["ctime"]
+        otime = c["otime"]        
+        present = dateparser.parse(
+            f"now", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "YMD"}
+        )       
+        cctime = dateparser.parse(f"{ctime}", settings={"TIMEZONE": f"{zone}"})
+        if present > cctime:
+            await tbot.send_message(
+                id,
+                f"**Nightbot:** It's time closing the chat now ...",
+            )
+            await tbot(functions.messages.EditChatDefaultBannedRightsRequest(
+                peer=id, banned_rights=closechat
+            )
+            newtime = ctime + timedelta(days=1)
+            to_check = get_info(id=event.chat_id)
+            nightmod.update_one(
+                {
+                    "_id": to_check["_id"],
+                    "id": to_check["id"],
+                    "zone": to_check["zone"],
+                    "ctime": to_check["ctime"],
+                    "otime": to_check["otime"],
+                },
+                {"$set": {"ctime": newtime}},
+            )
+            break
+            return
+        continue
