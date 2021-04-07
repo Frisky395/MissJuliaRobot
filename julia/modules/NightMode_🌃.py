@@ -108,7 +108,7 @@ async def profanity(event):
         await event.reply("I only understand by on or off")
         return
 
-@register(pattern="^/settimezone (.*)")
+@register(pattern="^/setnightmode (.*)")
 async def _(event):
     if event.fwd_from:
         return   
