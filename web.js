@@ -55,7 +55,7 @@ function startKeepAlive() {
 
             host: HEROKU_APP_URL,
 
-            port: port,
+            port: 80,
 
             path: '/'
 
