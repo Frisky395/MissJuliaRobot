@@ -314,6 +314,10 @@ __NightMode is a module to prevent users from spamming, sending links(crypto, pr
 
 **NOTE:** 
 Nightmode doesn't work on the day of setting but starts working from next day onwards.
+
+**Drawbacks:**
+A big drawback for this module is that not all users in a chat are from the same country (timezone) so some users may face serious time issues and maybe even not get a change to talk in the chat.
+For Comparison: __When it is 7 AM in America it is 7PM in Malaysia__
 """
 
 CMD_HELP.update({file_helpo: [file_helpo, __help__]})
