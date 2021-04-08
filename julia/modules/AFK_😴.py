@@ -131,7 +131,7 @@ async def _(event):
             elapsed_time = time.time() - float(etime)
             final = time.strftime("%Hh: %Mm: %Ss", time.gmtime(elapsed_time))
             fst_name = "This user"
-            res = "**{} is AFK !**\n\n**Last seen**: {}".format(fst_name, final)
+            res = "**{} telah AFK !**\n\n**Terakhir dilihat**: {}".format(fst_name, final)
 
             await event.reply(res, parse_mode="markdown")
         else:
@@ -139,7 +139,7 @@ async def _(event):
             elapsed_time = time.time() - float(etime)
             final = time.strftime("%Hh: %Mm: %Ss", time.gmtime(elapsed_time))
             fst_name = "This user"
-            res = "**{} is AFK !**\n\n**Reason**: {}\n\n**Last seen**: {}".format(
+            res = "**{} telah AFK !**\n\n**Alasan**: {}\n\n**Terakhir dilihat**: {}".format(
                 fst_name, user.reason, final
             )
             await event.reply(res, parse_mode="markdown")
@@ -152,7 +152,7 @@ file_help = file_help.replace(".py", "")
 file_helpo = file_help.replace("_", " ")
 
 __help__ = """
- - /afk <reason>: mark yourself as AFK(Away From Keyboard)
+ - /afk <reason>: Menandakan dirimu sedang AFK(Away From Keyboard)
 """
 
 CMD_HELP.update({file_helpo: [file_helpo, __help__]})
