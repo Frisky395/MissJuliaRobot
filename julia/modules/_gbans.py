@@ -202,6 +202,14 @@ async def type_ban(event):
     if event.chat_id in ANTI_GBAN:
         return
     pass
+    try:
+       if event.chat.megagroup:
+          pass
+       else:
+          #print("i don't work in small chats")
+          return
+    except:
+          return
     if not event.chat.megagroup:
        # https://t.me/MissJuliaRobotNews/96
        await tbot.kick_participant(event.chat_id, BOT_ID)
