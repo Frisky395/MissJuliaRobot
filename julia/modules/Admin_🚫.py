@@ -878,10 +878,10 @@ async def spiderr(spdr):
     try:
         await tbot(EditBannedRequest(spdr.chat_id, user.id, UNMUTE_RIGHTS))
 
-        await spdr.reply("Unmuted Successfully !")
+        await spdr.reply("Berhasil membisukan HAHAHA !")
 
     except BaseException:
-        await spdr.reply("Failed to unmute.")
+        await spdr.reply("Gagal membisukan anying.")
         return
 
 
@@ -952,9 +952,9 @@ async def locks(event):
         what = "everything"
     else:
         if not input_str:
-            await event.reply("I can't lock nothing !!")
+            await event.reply("Aku tidak bisa mengunci apa-apa !!")
             return
-        await event.reply(f"Invalid lock type: {input_str}")
+        await event.reply(f"Kesalahan ketika mengunci tipe: {input_str}")
         return
 
     lock_rights = ChatBannedRights(
@@ -975,9 +975,9 @@ async def locks(event):
         await tbot(
             EditChatDefaultBannedRightsRequest(event.chat_id, banned_rights=lock_rights)
         )
-        await event.reply(f"Locked Successfully !")
+        await event.reply(f"Penguncian berhasil dilakukan !")
     except Exception:
-        await event.reply("Failed to lock.")
+        await event.reply("Gagal mengunci anying.")
         return
 
 
@@ -1051,9 +1051,9 @@ async def rem_locks(event):
         what = "everything"
     else:
         if not input_str:
-            await event.reply("I can't unlock nothing !!")
+            await event.reply("Apa yang harus aku buka? ")
             return
-        await event.reply(f"Invalid unlock type: {input_str}")
+        await event.reply(f"Kesalahan ketika membuka tipe: {input_str}")
         return
 
     unlock_rights = ChatBannedRights(
@@ -1079,9 +1079,9 @@ async def rem_locks(event):
                 event.chat_id, banned_rights=unlock_rights
             )
         )
-        await event.reply(f"Unlocked Successfully !")
+        await event.reply(f"Berhasil melakukan penguncian !")
     except Exception:
-        await event.reply("Failed to unlock.")
+        await event.reply("Gagal melalukan penguncian.")
         return
 
 
