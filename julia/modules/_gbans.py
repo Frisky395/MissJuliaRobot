@@ -19,7 +19,7 @@ from telethon.tl.types import ChatBannedRights
 from telethon import events
 from telethon.tl.functions.channels import EditBannedRequest
 from pymongo import MongoClient
-from julia import MONGO_DB_URI, GBAN_LOGS
+from julia import MONGO_DB_URI, GBAN_LOGS, BOT_ID
 
 BANNED_RIGHTS = ChatBannedRights(
     until_date=None,
@@ -202,6 +202,9 @@ async def type_ban(event):
     if event.chat_id in ANTI_GBAN:
         return
     pass
+    if not event.chat.megagroup:
+       # https://t.me/MissJuliaRobotNews/96
+       await tbot.kick_participant(event.chat_id, BOT_ID)
     chats = gbanned.find({})
     for c in chats:
         if event.sender_id == c["user"]:
