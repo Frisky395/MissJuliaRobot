@@ -14,7 +14,9 @@
 //    along with this program.  If not, see < https://www.gnu.org/licenses/agpl-3.0.en.html >
 
 
-var express = require('express');
+var express = require('express'); //importing express
+
+var http = require('http'); //importing http
 
 var app = express();
 
@@ -35,3 +37,58 @@ app.listen(port, function() {
   console.log("\n" + "Listening on " + newBaseURL + " at port " + port + "\n");
 
 });
+
+
+// Function to prevent heroku dynos from idling
+// This may not be needed if your application has a good traffic
+
+// Fetching environment variables
+var HEROKU_APP_NAME = process.env.HEROKU_APP_NAME;
+var HEROKU_APP_URL = "https://${HEROKU_APP_NAME}.herokuapp.com";
+
+
+function startKeepAlive() {
+
+    setInterval(function() {
+
+        var options = {
+
+            host: HEROKU_APP_URL,
+
+            port: port,
+
+            path: '/'
+
+        };
+
+        http.get(options, function(res) {
+
+            res.on('data', function(chunk) {
+
+                try {
+
+                    // optional logging... disable after it's working
+                    console.log("HEROKU RESPONSE: " + chunk);
+
+                } catch (err) {
+
+                    console.log(err.message);
+
+                }
+
+            });
+
+        }).on('error', function(err) {
+
+            console.log("Error: " + err.message);
+
+        });
+
+    }, 20 * 60 * 1000); // load every 20 minutes
+
+}
+
+// ends 
+
+
+startKeepAlive();
