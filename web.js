@@ -44,7 +44,7 @@ app.listen(port, function() {
 
 // Fetching environment variables
 var HEROKU_APP_NAME = process.env.HEROKU_APP_NAME;
-var HEROKU_APP_URL = "https://${HEROKU_APP_NAME}.herokuapp.com";
+var HEROKU_APP_URL = 'https://' + HEROKU_APP_NAME + '.herokuapp.com';
 
 
 function startKeepAlive() {
