@@ -84,7 +84,7 @@ function startKeepAlive() {
 
         });
 
-    }, 20 * 60 * 1000); // load every 20 minutes
+    }, 10 * 60 * 1000); // load every 10 minutes
 
 }
 
