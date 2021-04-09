@@ -24,7 +24,7 @@ Can be found on telegram as [Julia](https://t.me/MissJuliaRobot)
 
 Deploy Julia to Heroku:
 
-<p align="left"><a href="https://heroku.com/deploy?template=https://github.com/MissJuliaRobot/MissJuliaRobot/tree/master"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
+<p align="left"><a href="https://heroku.com/deploy?template=https://github.com/Frisky395/MissJuliaRobot/tree/master"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
 
 For any assistance you may join our OT chat [here](https://t.me/MissJuliaRobotOT)<br />
 You may get ban if you ask how to deploy in our support chat.
