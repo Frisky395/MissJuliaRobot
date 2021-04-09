@@ -81,7 +81,7 @@ async def start(event):
             buttons=[
                 [
                     Button.url(
-                        "Tambahkan ke grup  👥", "t.me/Friskyjrbot?startgroup=true"
+                        "Tambahkan ke grup  👥", "t.me/Friiskybot?startgroup=true"
                     ),
                     Button.url(
                         "Join sini 🎙️", "https://t.me/friendzonew"
@@ -124,7 +124,7 @@ async def reopen_again(event):
             buttons=[
                 [
                     Button.url(
-                        "Tambahkan ke grup  👥", "t.me/Friskyjrbot?startgroup=true"
+                        "Tambahkan ke grup  👥", "t.me/Friiskybot?startgroup=true"
                     ),
                     Button.url(
                         "Join sini 🎙️", "https://t.me/friendzonew"
@@ -167,7 +167,7 @@ async def help(event):
     else:
         await event.reply(
             "Hubungi saya untuk informasi lainnya",
-            buttons=[[Button.url("Help ❓", "t.me/Friskyjrbot?start=help")]],
+            buttons=[[Button.url("Help ❓", "t.me/Friiskybot?start=help")]],
         )
 
 
@@ -190,7 +190,7 @@ async def help(event):
     else:
         await event.reply(
             "Hubungi saya untuk informasi lainnya",
-            buttons=[[Button.url("Help ❓", "t.me/Friskyjrbot?start=help")]],
+            buttons=[[Button.url("Help ❓", "t.me/Friiskybot?start=help")]],
         )
 
 
