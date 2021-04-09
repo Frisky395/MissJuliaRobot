@@ -81,39 +81,39 @@ async def start(event):
             buttons=[
                 [
                     Button.url(
-                        "Add To Group  👥", "t.me/MissJuliaRobot?startgroup=true"
+                        "Tambahkan ke grup  👥", "t.me/Friskyjrbot?startgroup=true"
                     ),
                     Button.url(
-                        "Support Group 🎙️", "https://t.me/MissJuliaRobotSupport"
+                        "Join sini 🎙️", "https://t.me/friendzonew"
                     ),
                 ],
                 [
-                    Button.inline("Commands ❓", data="help_menu"),
+                    Button.inline("perintah ❓", data="help_menu"),
                     Button.url(
-                        "Source 📀", "https://github.com/MissJuliaRobot/MissJuliaRobot"
+                        "Sumber 📀", "https://github.com/Frisky395/MissJuliaRobot"
                     ),
                 ],
                 [
                     Button.url("Channel 🗞️", url="https://t.me/MissJuliaRobotNews/2"),
                     Button.url("Webiste 🌐", "missjuliarobot.unaux.com"),
-                    Button.url("Donate 💲", "https://ko-fi.com/missjuliarobot"),
+                    Button.url("Kontak 😀", "https://wa.me/081532523063"),
                 ],
-                [Button.inline("Close Menu 🔒", data="start_again")],
+                [Button.inline("Menu ditutup 🔒", data="start_again")],
             ],
         )
     else:
-        await event.reply("I am Alive ^_^")
+        await event.reply("Saya disini 🤔")
 
 
 @tbot.on(events.CallbackQuery(pattern=r"start_again"))
 async def start_again(event):
     if not event.is_group:
         await event.edit(
-            "The menu is closed 🔒",
-            buttons=[[Button.inline("Reopen Menu 🔑", data="reopen_again")]],
+            "Menu telah ditutup 🔒",
+            buttons=[[Button.inline("buka menu lagi 🔑", data="reopen_again")]],
         )
     else:
-        await event.reply("I am Alive ^_^")
+        await event.reply("Saya disini 🤔")
 
 
 @tbot.on(events.CallbackQuery(pattern=r"reopen_again"))
@@ -124,28 +124,28 @@ async def reopen_again(event):
             buttons=[
                 [
                     Button.url(
-                        "Add To Group  👥", "t.me/MissJuliaRobot?startgroup=true"
+                        "Tambahkan ke grup  👥", "t.me/Friskyjrbot?startgroup=true"
                     ),
                     Button.url(
-                        "Support Group 🎙️", "https://t.me/MissJuliaRobotSupport"
+                        "Join sini 🎙️", "https://t.me/friendzonew"
                     ),
                 ],
                 [
-                    Button.inline("Commands ❓", data="help_menu"),
+                    Button.inline("perintah ❓", data="help_menu"),
                     Button.url(
-                        "Source 📀", "https://github.com/MissJuliaRobot/MissJuliaRobot"
+                        "Sumber 📀", "https://github.com/Frisky395/MissJuliaRobot"
                     ),
                 ],
                 [
                     Button.url("Channel 🗞️", url="https://t.me/MissJuliaRobotNews/2"),
                     Button.url("Webiste 🌐", "missjuliarobot.unaux.com"),
-                    Button.url("Donate 💲", "https://ko-fi.com/missjuliarobot"),
+                    Button.url("Kontak 😀", "https://wa.me/081532523063"),
                 ],
-                [Button.inline("Close Menu 🔒", data="start_again")],
+                [Button.inline("Menu ditutup 🔒", data="start_again")],
             ],
         )
     else:
-        await event.reply("I am Alive ^_^")
+        await event.reply("Saya disini 🤔")
 
 
 @register(pattern="^/help$")
@@ -166,8 +166,8 @@ async def help(event):
         await event.reply(PM_START_TEXT, buttons=buttons)
     else:
         await event.reply(
-            "Contact me in PM to get the help menu",
-            buttons=[[Button.url("Help ❓", "t.me/MissJuliaRobot?start=help")]],
+            "Hubungi saya untuk informasi lainnya",
+            buttons=[[Button.url("Help ❓", "t.me/Friskyjrbot?start=help")]],
         )
 
 
@@ -189,8 +189,8 @@ async def help(event):
         await event.reply(PM_START_TEXT, buttons=buttons)
     else:
         await event.reply(
-            "Contact me in PM to get the help menu",
-            buttons=[[Button.url("Help ❓", "t.me/MissJuliaRobot?start=help")]],
+            "Hubungi saya untuk informasi lainnya",
+            buttons=[[Button.url("Help ❓", "t.me/Friskyjrbot?start=help")]],
         )
 
 
